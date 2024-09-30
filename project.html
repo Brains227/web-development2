@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking Website</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #444;
+        }
+
+        /* Main Content */
+        #main-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #main-content h1 {
+            color: #333;
+        }
+
+        #main-content button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #main-content button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Form Styles */
+        form {
+            max-width: 500px;
+            margin: auto;
+            text-align: left;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="date"],
+        form select,
+        form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        form input[type="submit"],
+        form input[type="reset"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover,
+        form input[type="reset"]:hover {
+            background-color: #218838;
+        }
+
+        /* Form Validation Error Message */
+        .error {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Landing Page (Home) -->
+    <section id="home">
+        <div id="main-content">
+            <h1>Welcome to Travel Booking!</h1>
+            <p>Your one-stop destination for booking trips across the globe.</p>
+            <button onclick="scrollToSection('booking')">Book Now</button>
+            <button onclick="scrollToSection('destinations')">View Destinations</button>
+        </div>
+    </section>
+
+    <!-- About Us Page -->
+    <section id="about">
+        <div id="main-content">
+            <h1>About Us</h1>
+            <p>We are a travel agency dedicated to making your vacations unforgettable. Explore the world with our specially curated trips.</p>
+        </div>
+    </section>
+
+    <!-- Destinations Page -->
+    <section id="destinations">
+        <div id="main-content">
+            <h1>Our Destinations</h1>
+            <div>
+                <img src="https://via.placeholder.com/200" alt="Paris">
+                <p>Paris</p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/200" alt="New York">
+                <p>New York</p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/200" alt="Tokyo">
+                <p>Tokyo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Page (Form for User Input) -->
+    <section id="booking">
+        <div id="main-content">
+            <h1>Book Your Trip</h1>
+            <form id="booking-form" action="#" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="travel-type">Travel Type:</label><br>
+                <input type="radio" id="solo" name="travel-type" value="solo" required>
+                <label for="solo">Solo</label><br>
+                <input type="radio" id="family" name="travel-type" value="family">
+                <label for="family">Family</label><br><br>
+
+                <label for="preferences">Preferences:</label><br>
+                <input type="checkbox" id="hotel" name="preferences" value="hotel">
+                <label for="hotel">Hotel</label><br>
+                <input type="checkbox" id="meals" name="preferences" value="meals">
+                <label for="meals">Meals</label><br><br>
+
+                <label for="destination">Choose Destination:</label>
+                <select id="destination" name="destination">
+                    <option value="paris">Paris</option>
+                    <option value="new-york">New York</option>
+                    <option value="tokyo">Tokyo</option>
+                </select><br><br>
+
+                <label for="travel-date">Travel Date:</label>
+                <input type="date" id="travel-date" name="travel-date" required><br><br>
+
+                <label for="document">Upload Identification Document:</label>
+                <input type="file" id="document" name="document"><br><br>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Us Page -->
+    <section id="contact">
+        <div id="main-content">
+            <h1>Contact Us</h1>
+            <p>For inquiries, feel free to email us at <a href="mailto:info@travelbooking.com">info@travelbooking.com</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Travel Booking. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Scroll to different sections
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Form Validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('booking-form');
+            form.addEventListener('submit', function(event) {
+                let isValid = true;
+
+                // Validate name input
+                const nameInput = document.getElementById('name');
+                if (nameInput.value.trim() === '') {
+                    alert('Please enter your name');
+                    isValid = false;
+                }
+
+                // Add further validations here...
+
+                if (!isValid) {
+                    event.preventDefault();  // Prevent form submission if not valid
+                }
+            });
+        });
+    </script>
+</body>
+</html>
